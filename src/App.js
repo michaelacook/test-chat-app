@@ -28,7 +28,7 @@ function App() {
   return (
     <Container>
       <Grid style={{ height: "100vh" }} columns={1}>
-        <Grid.Column style={{ overflow: "auto", height: "80%" }}>
+        <Grid.Column style={{ overflow: "auto", height: "80%", marginTop: "10px" }}>
           {received.length
             ? received.map((msg) => {
                 return (

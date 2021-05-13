@@ -1,11 +1,5 @@
-import React, { useState } from "react"
-import {
-  Button,
-  Container,
-  Grid,
-  Input,
-  Message,
-} from "semantic-ui-react"
+import React, { useState, useEffect, useRef } from "react"
+import { Button, Container, Grid, Input, Message } from "semantic-ui-react"
 import { socket } from "./connection"
 
 function App() {
@@ -28,7 +22,9 @@ function App() {
   return (
     <Container>
       <Grid style={{ height: "100vh" }} columns={1}>
-        <Grid.Column style={{ overflow: "auto", height: "80%", marginTop: "10px" }}>
+        <Grid.Column
+          style={{ overflow: "auto", height: "80%", marginTop: "10px" }}
+        >
           {received.length
             ? received.map((msg) => {
                 return (
@@ -52,7 +48,12 @@ function App() {
             size="big"
             placeholder="Send Message..."
             action={
-              <Button color="blue" onClick={sendMessage}>
+              <Button
+                color="blue"
+                onClick={(e) => {
+                  sendMessage(e.target.value)
+                }}
+              >
                 Send
               </Button>
             }

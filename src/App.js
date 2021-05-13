@@ -4,7 +4,6 @@ import {
   Container,
   Grid,
   Input,
-  Segment,
   Message,
 } from "semantic-ui-react"
 import { socket } from "./connection"
